@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Administrator Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cloud Administrator Dashboard</h1>
+    <p>Manage your Azure, AWS, and GCP resources in one place</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Azure</h2>
+      <p>Virtual Machines: 4 Running</p>
+      <button onclick="deployVM('Azure')">Deploy VM</button>
+    </div>
+
+    <div class="card">
+      <h2>AWS</h2>
+      <p>EC2 Instances: 3 Running</p>
+      <button onclick="deployVM('AWS')">Deploy VM</button>
+    </div>
+
+    <div class="card">
+      <h2>GCP</h2>
+      <p>Compute Engine: 2 Running</p>
+      <button onclick="deployVM('GCP')">Deploy VM</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>VM Deployment Progress</h2>
+    <div class="progress-bar"><div id="progress"></div></div>
+    <button onclick="startProgress()">Start Deployment</button>
+  </div>
+
+  <div class="card">
+    <h2>Cloud Cost Calculator</h2>
+    <input type="number" id="hours" placeholder="Hours Used">
+    <input type="number" id="rate" placeholder="Rate per Hour $">
+    <button onclick="calcCost()">Calculate</button>
